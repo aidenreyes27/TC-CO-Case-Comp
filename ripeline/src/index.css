@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+/* Palette from the concept doc. Semantic names so dark mode is one swap. */
+:root {
+  --c-bg: #F3FAF5;        /* mint white */
+  --c-surface: #FFFFFF;
+  --c-ink: #12291C;       /* deep green-black */
+  --c-ink-soft: #4A6354;
+  --c-line: #D5E8DB;
+  --c-primary: #2E7D4F;   /* forest */
+  --c-primary-ink: #FFFFFF;
+  --c-accent: #8BC34A;    /* lime: points, levels */
+  --c-fresh: #43A047;
+  --c-soon: #F2B705;
+  --c-last: #E2553D;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --c-bg: #0F1F16;      /* night green */
+    --c-surface: #17301F;
+    --c-ink: #E6F4EA;
+    --c-ink-soft: #9FBCA8;
+    --c-line: #2A4A35;
+    --c-primary: #5DBB7F;
+    --c-primary-ink: #0F1F16;
+    color-scheme: dark;
+  }
+}
+
+@theme {
+  --font-sans: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --color-bg: var(--c-bg);
+  --color-surface: var(--c-surface);
+  --color-ink: var(--c-ink);
+  --color-ink-soft: var(--c-ink-soft);
+  --color-line: var(--c-line);
+  --color-primary: var(--c-primary);
+  --color-primary-ink: var(--c-primary-ink);
+  --color-accent: var(--c-accent);
+  --color-fresh: var(--c-fresh);
+  --color-soon: var(--c-soon);
+  --color-last: var(--c-last);
+}
+
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  background: var(--c-bg);
+  color: var(--c-ink);
+  font-family: var(--font-sans);
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+  padding-top: env(safe-area-inset-top, 0px);
+}
+:focus-visible { outline: 3px solid var(--c-accent); outline-offset: 2px; border-radius: 6px; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .grow-in { animation: grow-in 900ms cubic-bezier(.2,.8,.2,1) both; transform-origin: left; }
+}
+@keyframes grow-in { from { transform: scaleX(0); } to { transform: scaleX(1); } }

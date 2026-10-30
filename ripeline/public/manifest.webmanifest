@@ -1,0 +1,11 @@
+{
+  "name": "Ripeline",
+  "short_name": "Ripeline",
+  "description": "Cook it before it spoils. Score points with your roommates.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F3FAF5",
+  "theme_color": "#2E7D4F",
+  "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}

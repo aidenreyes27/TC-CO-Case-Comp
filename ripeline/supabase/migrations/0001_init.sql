@@ -241,7 +241,7 @@ end $$;
 
 create or replace function public.new_invite_code()
 returns text
-language plpgsql security definer set search_path = public as $$
+language plpgsql security definer set search_path = public, extensions as $$
 declare
   h_id uuid := public.my_household_id();
   code text := encode(gen_random_bytes(5), 'hex');
